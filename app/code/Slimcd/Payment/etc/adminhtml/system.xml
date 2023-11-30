@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<system>
+   <section id="payment">
+        <group id="slimcdpayment" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Slim CD </label>
+            <comment><![CDATA[Online payments using Slim CD Hosted Payment Pages.<br/>]]></comment>
+            <field id="slimuseonly" translate="label" type="hidden" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Post Back and Redirect URL in form settings</label>
+                <comment model="Slimcd\Payment\Model\Comment" />
+            </field>
+            <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Enabled</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <!--<comment model="Slimcd\Payment\Model\Comment" />-->
+            </field>
+            <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+              <label>Title</label>
+            </field>
+             <field id="description" translate="label" type="textarea" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Description</label>
+            </field>
+                <group id="slimcd_API" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="40">
+                    <label>API credentials</label>
+                     <comment><![CDATA[Enter your Slim CD API credentials to process payment. Learn how to access your <a href="https://stats.slimcd.com/soft/interface/default.asp" target="_blank">Slim CD credentials</a>.]]></comment>
+                     
+                    <field id="api_username" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Username</label>
+                    </field>
+                    <field id="client_id" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Client Id</label>
+                </field>
+                <field id="site_id" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Site Id</label>
+                </field>
+                <field id="price_id" translate="label" type="text" sortOrder="36" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Price Id</label>
+                </field>
+                <field id="password" translate="label" type="password" sortOrder="37" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Password</label>
+                 </field>
+                </group>  
+                <group id="slimcd_card" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="40">
+                    <label>Card payment details</label>
+                    <comment><![CDATA[Enter your Slim CD form name to process payment. Learn how to access your <a href="https://stats.slimcd.com/soft/interface/default.asp" target="_blank">Slim CD card payment</a>.]]></comment>
+                    <field id="form_name_for_card" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Form name for card</label>
+                    </field>
+                    <field id="transtype" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Transtype</label>
+                        <source_model>Slimcd\Payment\Model\Config\Source\Transtype</source_model>
+                    </field>
+                     <field id="card_sur_dis" translate="label" type="textarea" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Surcharge Disclaimer</label>
+                    </field>
+                    <field id="card_fee_dis" translate="label" type="textarea" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Convenience fee disclaimer</label>
+                    </field> 
+                </group>  
+                <group id="slimcd_check" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="40">
+                    <label>Check payment details</label>
+                    <comment><![CDATA[Enter your Slim CD cheque payment form name to process payment. Learn how to access your <a href="https://stats.slimcd.com/soft/interface/default.asp" target="_blank">Slim CD cheque payment</a>.]]></comment>                    
+                    <field id="form_name_for_check" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Form name for check</label>
+                    </field>    
+                    <field id="check_fee_dis" translate="label" type="textarea" sortOrder="32" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Convenience fee disclaimer</label>
+                    </field>                  
+                </group>     
+      </group>
+    </section> 
+  </system> 
+</config> 
